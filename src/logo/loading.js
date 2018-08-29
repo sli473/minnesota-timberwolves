@@ -1,5 +1,4 @@
 import React from 'react';
-import { MorphReplaceResize } from 'react-svg-morph';
 import Logo from './logo';
 
 export default class LoadingLogo extends React.Component {
