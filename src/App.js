@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { stats, data } from 'nba.js';
+import Logo from './logo/loading';
 import './App.css';
 
 class App extends Component {
@@ -59,6 +60,7 @@ class App extends Component {
     const { players, pic } = this.state;
     return (
       <div>
+        <Logo />
         oh shit allPlayers
         {players ? (
           players.map(player => (
