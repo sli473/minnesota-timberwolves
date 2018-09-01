@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import { stats, data } from 'nba.js';
-import Logo from './logo/loading';
+import Logo from './media/loading';
 import './App.css';
+
+const delay = ms => {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
+};
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +35,8 @@ class App extends Component {
   fetchPlayerStats = async players => {
     const playerStats = [];
     console.log(players);
-    await Promise.all(
+    await Promise.all([
+      delay(5300),
       players.map(async player => {
         const playerName = player[1].split(', ');
         const playerStatsPromise = await fetch(
@@ -50,7 +58,7 @@ class App extends Component {
           });
         }
       })
-    );
+    ]);
 
     console.log('what these boys look like g', playerStats);
     return playerStats;
@@ -59,9 +67,7 @@ class App extends Component {
   render() {
     const { players, pic } = this.state;
     return (
-      <div>
-        <Logo />
-        oh shit allPlayers
+      <div className={classNames('patterns-container', !players && 'loading-screen')}>
         {players ? (
           players.map(player => (
             <div key={player.name}>
@@ -70,7 +76,7 @@ class App extends Component {
             </div>
           ))
         ) : (
-          <div> Loading... </div>
+          <Logo />
         )}
       </div>
     );

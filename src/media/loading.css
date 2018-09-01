@@ -1,14 +1,14 @@
 @keyframes timberwolves-logo {
   0% {
-    opacity: 0;
-  }
-  15%,
-  70% {
     opacity: 1;
+  }
+  35%,
+  50% {
+    opacity: 0;
   }
   85%,
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -38,4 +38,8 @@
 
 .timberwolves-logo-components-6 {
   animation-delay: 1.8s;
+}
+
+.loading-logo {
+  margin: auto;
 }
