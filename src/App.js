@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { stats, data } from 'nba.js';
+
+import PlayersList from './components/PlayersList';
 import Logo from './media/loading';
 import './App.css';
 
@@ -68,16 +70,7 @@ class App extends Component {
     const { players, pic } = this.state;
     return (
       <div className={classNames('patterns-container', !players && 'loading-screen')}>
-        {players ? (
-          players.map(player => (
-            <div key={player.name}>
-              {player.name}
-              <img height={100} src={player.imageURL} />
-            </div>
-          ))
-        ) : (
-          <Logo />
-        )}
+        {players ? <PlayersList players={players} /> : <Logo />}
       </div>
     );
   }

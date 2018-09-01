@@ -1,0 +1,12 @@
+.player-style {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+}
+
+.player-style-image {
+  margin-bottom: 1rem;
+}

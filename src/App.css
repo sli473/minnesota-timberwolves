@@ -9,7 +9,8 @@
 
 .patterns-container {
   background-image: url(./media/Subtle-Prism.svg);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
